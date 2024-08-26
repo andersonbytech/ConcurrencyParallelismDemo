@@ -10,13 +10,13 @@ namespace ConcurrencyParallelismDemo
     {
         static async Task Main(string[] args)
         {
-            int taskCount = 1000000;
+            int taskCount = 10;
 
-            //Console.WriteLine("Not Concurrent, Not Parallel:");
-            //NotConcurrentNotParallel(taskCount);
+            Console.WriteLine("Not Concurrent, Not Parallel:");
+            NotConcurrentNotParallel(taskCount);
 
-            //Console.WriteLine("\nConcurrent (Asynchronous):");
-           // await ConcurrentNotParallel(taskCount);
+            Console.WriteLine("\nConcurrent (Asynchronous):");
+            await ConcurrentNotParallel(taskCount);
 
             Console.WriteLine("\nParallel (Threads):");
             NotConcurrentParallel(taskCount);
@@ -76,7 +76,7 @@ namespace ConcurrencyParallelismDemo
         static void SimulateTask(int taskNumber)
         {
             Console.WriteLine($"Task {taskNumber} iniciada.");
-            Thread.Sleep(600000);
+            Thread.Sleep(2000);
             Console.WriteLine($"Task {taskNumber} concluída.");
         }
         static async Task SimulateTaskAsync(int taskNumber)
